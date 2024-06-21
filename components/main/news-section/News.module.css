@@ -1,0 +1,28 @@
+.news {
+    background-image: url("../../../assets/images/news.png");    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 45% 0px;
+    height: 400px;
+}
+
+.news_content {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    width: 100%; 
+    padding: 20px; 
+}
+
+.news_content h1 {
+    color: white;
+    font-size: 48px;
+}
+
+@media (max-width: 768px) {
+    .news_content h1 {
+        font-size: 32px;
+    }
+}

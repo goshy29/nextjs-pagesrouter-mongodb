@@ -1,0 +1,28 @@
+.blog {
+    background-image: url("../../../assets/images/blog.jpg");    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% 0px;
+    height: 400px;
+}
+
+.blog_content {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    width: 100%; 
+    padding: 20px; 
+}
+
+.blog_content h1 {
+    color: white;
+    font-size: 48px;
+}
+
+@media (max-width: 768px) {
+    .blog_content h1 {
+        font-size: 32px;
+    }
+}

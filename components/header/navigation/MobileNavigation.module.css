@@ -1,0 +1,32 @@
+.mobile_navbar {
+    height: 100%;
+}
+
+.mobile_nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1001;
+    height: 100vh;
+    width: 320px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding-top: 50px;
+}
+
+.mobile_navbar_list li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.close_button {
+    background: none;
+    border: none;
+    font-size: 3.5rem;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    cursor: pointer;
+    color: #212529;
+}

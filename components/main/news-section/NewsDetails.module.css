@@ -1,0 +1,11 @@
+.detail {
+    text-align: left;
+    max-width: 50rem;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.detail img {
+    width: 100%;
+    object-fit: cover;
+}

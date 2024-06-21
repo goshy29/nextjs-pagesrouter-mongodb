@@ -1,0 +1,28 @@
+.share {
+    background-image: url("../../../assets/images/share_experience.jpg");    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% -80px;
+    height: 700px;
+}
+
+.share_content {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    width: 100%; 
+    padding: 20px; 
+}
+
+.share_content h1 {
+    color: white;
+    font-size: 48px;
+}
+
+@media (max-width: 768px) {
+    .share_content h1 {
+        font-size: 32px;
+    }
+}
