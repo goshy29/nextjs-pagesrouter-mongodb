@@ -1,0 +1,11 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 60rem;
+    margin: auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+  }

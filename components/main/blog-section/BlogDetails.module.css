@@ -1,0 +1,27 @@
+.detail {
+    text-align: left;
+    max-width: 50rem;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.actions {
+    text-align: left;
+    padding-top: 20px;
+}
+  
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    color: #f23a2e;
+    border: 1px solid #f23a2e;
+    background-color: transparent;
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+}
+  
+.actions button:hover,
+.actions button:active {
+    background-color: #f23a2e;
+    color: white;
+}

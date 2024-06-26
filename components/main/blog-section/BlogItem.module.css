@@ -1,0 +1,33 @@
+.item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.content {
+    text-align: left;
+}
+
+.actions {
+    text-align: left;
+    padding-top: 20px;
+}
+  
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    color: #f23a2e;
+    border: 1px solid #f23a2e;
+    background-color: transparent;
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+}
+  
+.actions button:hover,
+.actions button:active {
+    background-color: #f23a2e;
+    color: white;
+}

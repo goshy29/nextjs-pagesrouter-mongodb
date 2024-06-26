@@ -57,6 +57,10 @@
     color: white;
   }
 
+  .error_message {
+    color: red;
+  }
+
   @media (max-width: 600px) {
     .actions button {
         width: 100%;

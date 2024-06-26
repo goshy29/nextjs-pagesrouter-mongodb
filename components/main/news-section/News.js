@@ -13,7 +13,7 @@ function News(props) {
                 <div className="content">
                     {props.news.length > 0 ? 
                         (<NewsList news={props.news} />) : 
-                        (<h2>No News Available.</h2>)
+                        (<h1>No News Available.</h1>)
                     }
                 </div>            
             </section>

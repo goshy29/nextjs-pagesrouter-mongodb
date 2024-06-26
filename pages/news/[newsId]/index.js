@@ -1,15 +1,22 @@
 import NewsDetails from "@/components/main/news-section/NewsDetails";
 import { NEWS } from "@/data/news";
+import Head from "next/head";
 
 function NewsDetailsPage(props) {
     return ( 
-        <NewsDetails 
-            image={props.newsData.image}
-            title={props.newsData.title}
-            name={props.newsData.name}
-            date={props.newsData.date}
-            text={props.newsData.text}
-        />
+        <>
+            <Head>
+                <title>{props.newsData.title}</title>
+                <meta name="description" content={props.newsData.title} />
+            </Head>
+            <NewsDetails 
+                image={props.newsData.image}
+                title={props.newsData.title}
+                name={props.newsData.name}
+                date={props.newsData.date}
+                text={props.newsData.text}
+            />
+        </>
     );
 }
 

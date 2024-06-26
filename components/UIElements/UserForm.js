@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import classes from "./UserForm.module.css";
 
-function UserForm() {
+function UserForm(props) {
     const titleInputRef = useRef();
     const nameInputRef = useRef();
     const emailInputRef = useRef();
@@ -36,7 +36,7 @@ function UserForm() {
             experience: enteredExperience
         };
 
-        
+        props.onShareExp(shareExpData);
     }
 
     return ( 
@@ -46,27 +46,27 @@ function UserForm() {
             <form className={classes.form} onSubmit={handlerSubmit}>
                 <div className={classes.control}>
                     <label htmlFor="title">Title</label>
-                    <input type="text" required id="title" ref={titleInputRef}
+                    <input type="text" required id="title" placeholder="Title" ref={titleInputRef}
                     />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="name">Name</label>
-                    <input type="text" required id="name" ref={nameInputRef}
+                    <input type="text" required id="name" placeholder="Full Name" ref={nameInputRef}
                     />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" required id="email" ref={emailInputRef}
+                    <input type="email" required id="email" placeholder="Email Address" ref={emailInputRef}
                     />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="date">Date</label>
-                    <input type="date" required id="date" ref={dateInputRef}
+                    <input type="date" required id="date" placeholder="Date" ref={dateInputRef}
                     />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="experience">Experience</label>
-                    <textarea required id="experience" rows="5" ref={experienceInputRef}
+                    <textarea required id="experience" rows="5" placeholder="Enter Your Experience" ref={experienceInputRef}
                     />
                 </div>
                 {errorMessage && (<p className={classes.error_message}>{errorMessage}</p>)}

@@ -1,6 +1,7 @@
 import classes from "./Blog.module.css";
+import BlogList from "./BlogList";
 
-function Blog() {
+function Blog(props) {
     return ( 
         <>
             <section className={classes.blog}>
@@ -10,7 +11,10 @@ function Blog() {
             </section>
             <section className={classes.blog_section}>
                 <div className="content">
-                    <h1>The Blog Page</h1>
+                    {props.blog.length > 0 ? 
+                        (<BlogList blog={props.blog} />) : 
+                        (<h1>No Blogs Available</h1>)
+                    }
                 </div>            
             </section> 
         </>       

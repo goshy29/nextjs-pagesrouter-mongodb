@@ -21,7 +21,7 @@ function Home() {
                         <div className={classes.join}>
                             <h2>Next Level Workout</h2>   
                             <h2>For Next Level Bodies</h2> 
-                            <p>Taste and share the food from all over the world</p>
+                            <p>Share your recipe for a perfect body with everyone around the world.</p>
                             <div className={classes.btn}>                
                                 <Link href="/share-experience">Get Started</Link> 
                             </div>

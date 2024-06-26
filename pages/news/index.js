@@ -1,9 +1,16 @@
 import News from "@/components/main/news-section/News";
 import { NEWS } from "../../data/news";
+import Head from "next/head";
 
 function NewsPage(props) {
     return ( 
-        <News news={props.news} />    
+        <>
+            <Head>
+                <title>News</title>
+                <meta name="description" content="Read some interesting news about fitness world." />
+            </Head>
+            <News news={props.news} />
+        </>    
     );
 }
 
