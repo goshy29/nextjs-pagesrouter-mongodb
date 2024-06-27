@@ -5,7 +5,6 @@ function UserForm(props) {
     const titleInputRef = useRef();
     const nameInputRef = useRef();
     const emailInputRef = useRef();
-    const dateInputRef = useRef();
     const experienceInputRef = useRef();
 
     const [errorMessage, setErrorMessage] = useState("");
@@ -16,11 +15,10 @@ function UserForm(props) {
         const enteredTitle = titleInputRef.current.value;
         const enteredName = nameInputRef.current.value;
         const enteredEmail = emailInputRef.current.value;
-        const enteredDate = dateInputRef.current.value;
         const enteredExperience = experienceInputRef.current.value;
 
-        if (enteredTitle.trim() === "" || enteredName.trim() === "" || enteredEmail.trim() === "" ||
-            enteredDate.trim() === "" || enteredExperience.trim() === "") {
+        if (enteredTitle.trim() === "" || enteredName.trim() === "" || 
+            enteredEmail.trim() === "" || enteredExperience.trim() === "") {
             setErrorMessage("All fields must be filled.");
             return;
         } else if (!enteredEmail.includes("@")) {
@@ -28,11 +26,15 @@ function UserForm(props) {
             return;   
         }
 
+        const currentDate = new Date();
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        const formattedDate = currentDate.toLocaleDateString("en-US", options);
+
         const shareExpData = {
             title: enteredTitle,
             name: enteredName,
             email: enteredEmail,
-            date: enteredDate,
+            date: formattedDate,
             experience: enteredExperience
         };
 
@@ -41,7 +43,6 @@ function UserForm(props) {
 
     return ( 
            <div className={classes.form_wrap}>
-            {/* <p className={classes.form_title}>{place ? "Edit Place" : "Add Place"}</p> */}
             <p className={classes.form_title}>Share</p>
             <form className={classes.form} onSubmit={handlerSubmit}>
                 <div className={classes.control}>
@@ -60,18 +61,12 @@ function UserForm(props) {
                     />
                 </div>
                 <div className={classes.control}>
-                    <label htmlFor="date">Date</label>
-                    <input type="date" required id="date" placeholder="Date" ref={dateInputRef}
-                    />
-                </div>
-                <div className={classes.control}>
                     <label htmlFor="experience">Experience</label>
-                    <textarea required id="experience" rows="5" placeholder="Enter Your Experience" ref={experienceInputRef}
+                    <textarea required id="experience" rows="7" placeholder="Enter Your Experience" ref={experienceInputRef}
                     />
                 </div>
                 {errorMessage && (<p className={classes.error_message}>{errorMessage}</p>)}
                 <div className={classes.actions}>
-                    {/* <button type="submit">{place ? "Save Changes" : "Add Place"}</button> */}
                     <button type="submit">Share</button>
                 </div>
             </form>    

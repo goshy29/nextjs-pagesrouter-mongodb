@@ -14,7 +14,7 @@ function NewsDetailsPage(props) {
                 title={props.newsData.title}
                 name={props.newsData.name}
                 date={props.newsData.date}
-                text={props.newsData.text}
+                text={props.newsData.text.replace(/\n/g, "<br />")}
             />
         </>
     );

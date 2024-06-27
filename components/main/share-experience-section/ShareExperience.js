@@ -1,9 +1,11 @@
 import UserForm from "@/components/UIElements/UserForm";
 import classes from "./ShareExperience.module.css";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 function ShareExperience() {
     const router = useRouter();
+    const [error, setError] = useState();
 
     async function handlerShareExp(shareExpData) {
         try {
@@ -16,27 +18,32 @@ function ShareExperience() {
             );
 
             if (!response.ok) {
-                throw new Error("Failed to post the experience.");
+                throw new Error("Failed to save Experience.");
             }
 
             router.push("/blog");
         } catch (err) {
-            console.log(err);
+            setError(err.message);
         }
     }
 
     return ( 
         <>
-            <section className={classes.share}>
-                <div className={classes.share_content}>
-                    <h1>Share Your Experience</h1>
-                </div>
-            </section>
-            <section className={classes.user_input_section}>
-                <div className="content">
-                    <UserForm onShareExp={handlerShareExp} />
-                </div>            
-            </section>
+            {error ? 
+                (<h3 className="content">Error: {error}</h3>) : 
+                (<>
+                    <section className={classes.share}>
+                        <div className={classes.share_content}>
+                            <h1>Share Your Experience</h1>
+                        </div>
+                    </section>
+                    <section className={classes.user_input_section}>
+                        <div className="content">
+                            <UserForm onShareExp={handlerShareExp} />
+                        </div>            
+                    </section>
+                </>) 
+            }   
         </>
     );
 }

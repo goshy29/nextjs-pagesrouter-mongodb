@@ -11,9 +11,11 @@ function Blog(props) {
             </section>
             <section className={classes.blog_section}>
                 <div className="content">
-                    {props.blog.length > 0 ? 
-                        (<BlogList blog={props.blog} />) : 
-                        (<h1>No Blogs Available</h1>)
+                    {props.error ? 
+                        (<h3>Error: {props.error}</h3>) : 
+                        (props.blog.length > 0 ? 
+                            (<BlogList blog={props.blog} />) : 
+                            (<h1>No Blogs Available</h1>))
                     }
                 </div>            
             </section> 

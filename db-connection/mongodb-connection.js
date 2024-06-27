@@ -16,7 +16,7 @@ async function dbConnection() {
         savedDb = db;
         return db;
     } catch(err) {
-        throw new Error("Could not connect to the database");
+        throw new Error("Could not connect to the database.");
     }
 }
 
