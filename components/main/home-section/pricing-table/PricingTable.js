@@ -36,7 +36,7 @@ function PricingTable() {
                     <div className={classes.item}>
                         <h4>1 YEAR MEMBERSHIP</h4>
                         <span className={classes.price}>
-                            <span className={classes.number}>249</span>
+                            <span className={classes.number}>349</span>
                             <sup>$</sup> 
                         </span>
                         <h4>ENJOY ALL THE FEATURES</h4>
