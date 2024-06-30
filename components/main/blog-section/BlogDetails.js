@@ -12,7 +12,7 @@ function BlogDetails(props) {
             try {
                 const response = await fetch("/api/blog", {
                     method: "DELETE",
-                    body: JSON.stringify({ placeId: props.id }),
+                    body: JSON.stringify({ blogId: props.id }),
                     headers: { "Content-Type": "application/json" }
                 });
 
@@ -21,26 +21,26 @@ function BlogDetails(props) {
                 }
 
                 router.push("/blog");
-            } catch(err) {
+            } catch (err) {
                 setError(err.message);
             }
         }
     }
 
-    return ( 
+    return (
         <div className="content">
-            {error ? 
-                (<h3>Error: {error}</h3>) : 
+            {error ?
+                (<h3>Error: {error}</h3>) :
                 (<section className={classes.detail}>
                     <h1>{props.title}</h1>
-                    <p>{props.date}</p>            
+                    <p>{props.date}</p>
                     <p className={classes.experience}>{props.experience}</p>
                     <p>By {props.name}</p>
                     <div className={classes.actions}>
                         <button onClick={handlerDeletePlace}>Delete</button>
                     </div>
                 </section>)
-            }  
+            }
         </div>
     );
 }

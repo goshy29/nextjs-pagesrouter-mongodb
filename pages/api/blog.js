@@ -4,7 +4,7 @@ import { ObjectId } from 'mongodb';
 async function handler(req, res) {
     if (req.method === "POST") {
         const data = req.body;
-    
+
         try {
             const db = await dbConnection();
             const result = await db.collection("blog").insertOne(data);
@@ -15,18 +15,18 @@ async function handler(req, res) {
     }
 
     if (req.method === "DELETE") {
-        const { placeId } = req.body;
+        const { blogId } = req.body;
 
-        let place;
+        let blog;
         try {
             const db = await dbConnection();
-            place = await db.collection("blog").findOne({ _id: new ObjectId(placeId) });
+            blog = await db.collection("blog").findOne({ _id: new ObjectId(blogId) });
 
-            if (!place) {
+            if (!blog) {
                 return res.status(404).json({ message: "Blog not found." });
             }
 
-            await db.collection("blog").deleteOne({ _id: new ObjectId(placeId) });
+            await db.collection("blog").deleteOne({ _id: new ObjectId(blogId) });
 
             res.status(200).json({ message: "Successfully deleted Blog." });
         } catch (err) {
